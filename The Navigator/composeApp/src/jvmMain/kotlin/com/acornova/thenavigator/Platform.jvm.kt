@@ -1,7 +1,15 @@
 package com.acornova.thenavigator
 
-class JVMPlatform: Platform {
-    override val name: String = "Java ${System.getProperty("java.version")}"
+import androidx.compose.runtime.Composable
+
+actual fun getPlatform(): String = "Java ${System.getProperty("java.version")}"
+
+@Composable
+actual fun getSize(): String {
+    return "Large"
 }
 
-actual fun getPlatform(): Platform = JVMPlatform()
+@Composable
+actual fun phoneAnroid(): Boolean {
+    return false
+}

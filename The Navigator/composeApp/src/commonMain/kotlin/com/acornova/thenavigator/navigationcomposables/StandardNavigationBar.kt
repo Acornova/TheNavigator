@@ -1,0 +1,219 @@
+package com.acornova.thenavigator.navigationcomposables
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.MaterialTheme.typography
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
+import com.acornova.thenavigator.Colors
+import com.acornova.thenavigator.DataSource.navController
+import com.acornova.thenavigator.DataSource.poppins
+import com.acornova.thenavigator.downloadApp
+import com.acornova.thenavigator.getPlatform
+import com.acornova.thenavigator.getSize
+import com.acornova.thenavigator.phoneAnroid
+import compose.icons.FontAwesomeIcons
+import compose.icons.fontawesomeicons.Solid
+import compose.icons.fontawesomeicons.solid.Download
+import compose.icons.fontawesomeicons.solid.List
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
+import org.jetbrains.compose.resources.imageResource
+import thenavigator.composeapp.generated.resources.Res
+import thenavigator.composeapp.generated.resources.icon
+
+// Standard  navigation bar
+
+@Composable
+fun NavigationBar(
+    onMobileNavClick: () -> Unit
+) {
+    var refresher by remember { mutableStateOf(0) }
+
+    val coroutineScope = rememberCoroutineScope()
+
+    fun refresh() {
+        coroutineScope.launch {
+            delay(1000)
+            if (refresher <= 10) refresher++ else refresher = 0
+        }
+    }
+
+    refresh()
+
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .height(100.dp)
+            .background(Colors.container)
+            .padding((15 + refresher - refresher).dp),
+        horizontalArrangement = Arrangement.SpaceBetween,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Center,
+            modifier = Modifier
+                .fillMaxHeight()
+                .width(250.dp)
+                .clip(RoundedCornerShape(25.dp))
+                .clickable {
+                    navController.navigate("home")
+                }
+        ) {
+            Image(
+                bitmap = imageResource(Res.drawable.icon),
+                contentDescription = null,
+                modifier = Modifier
+                    .size(50.dp)
+                    .clip(RoundedCornerShape(100.dp))
+            )
+            Spacer(Modifier.width(10.dp))
+            Text(
+                text = "The Deliverer",
+                color = Colors.onContainer,
+                fontSize = typography.headlineMedium.fontSize,
+                style = typography.headlineMedium,
+                fontWeight = FontWeight.Medium,
+                fontFamily = poppins
+            )
+        }
+        Row(
+            modifier = Modifier.horizontalScroll(rememberScrollState())
+        ) {
+            if (getSize() == "Small") {
+                Image(
+                    imageVector = FontAwesomeIcons.Solid.List,
+                    contentDescription = null,
+                    modifier = Modifier
+                        .size(30.dp)
+                        .clickable {
+                            onMobileNavClick()
+                        },
+                    colorFilter = ColorFilter.tint(Colors.onContainer)
+                )
+                Spacer(Modifier.width(15.dp))
+            } else {
+                screens.forEach { screen ->
+                    NavigationBarItem(
+                        label = screen.title,
+                        selected = navController.currentDestination?.route == screen.route,
+                        onClick = {
+                            navController.navigate(screen.route)
+                        }
+                    )
+                    Spacer(Modifier.width(30.dp))
+                }
+            }
+            if (getPlatform().contains("Web")) {
+                var supported by remember { mutableStateOf(true) }
+                val androidPhone = phoneAnroid()
+                if (supported) {
+                    Box(
+                        modifier = Modifier
+                            .size(30.dp)
+                            .clip(RoundedCornerShape(100.dp))
+                            .background(Colors.primary)
+                            .border(2.dp, Colors.onPrimary, RoundedCornerShape(100.dp))
+                            .clickable {
+                                if (androidPhone) {
+                                    val downloadSuccess =
+                                        downloadApp("https://play.google.com/store/apps/details?id=com.myjworld.thedrone")
+                                    if (!downloadSuccess) {
+                                        supported = false
+                                    }
+                                } else {
+                                    val downloadSuccess =
+                                        downloadApp("https://myj-world.github.io/the-deliverer/download.html")
+                                    if (!downloadSuccess) {
+                                        supported = false
+                                    }
+                                }
+                            },
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Image(
+                            imageVector = FontAwesomeIcons.Solid.Download,
+                            contentDescription = "Download App",
+                            modifier = Modifier
+                                .fillMaxWidth(0.5f)
+                                .fillMaxHeight(0.5f),
+                            contentScale = ContentScale.FillBounds,
+                            colorFilter = ColorFilter.tint(Colors.onPrimary)
+                        )
+                    }
+                }
+
+                if (!supported) {
+                    Box(
+                        modifier = Modifier
+                            .clip(RoundedCornerShape(100.dp))
+                            .background(Colors.primary)
+                            .border(2.dp, Colors.onPrimary, RoundedCornerShape(100.dp))
+                            .padding(10.dp),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Text(
+                            text = "Device not supported",
+                            color = Colors.onPrimary,
+                            fontSize = 18.sp,
+                            fontWeight = FontWeight.Normal,
+                            fontFamily = poppins
+                        )
+                    }
+                }
+            }
+
+            Spacer(Modifier.width(15.dp))
+        }
+    }
+}
+
+// Single item in navigation bar
+
+@Composable
+fun NavigationBarItem(
+    label: String,
+    selected: Boolean,
+    onClick: () -> Unit
+) {
+    Text(
+        text = label,
+        color = if (selected) Colors.onContainerVariant else Colors.onContainer,
+        fontSize = typography.headlineMedium.fontSize,
+        style = typography.headlineMedium,
+        fontWeight = FontWeight.Normal,
+        fontFamily = poppins,
+        modifier = Modifier.clickable {
+            onClick()
+        }
+    )
+}

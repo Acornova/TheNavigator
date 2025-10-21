@@ -1,0 +1,99 @@
+package com.acornova.thenavigator.screens
+
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.MaterialTheme.typography
+import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
+import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.blur
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.ColorFilter
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.unit.dp
+import com.acornova.thenavigator.Colors
+import com.acornova.thenavigator.DataSource.navController
+import com.acornova.thenavigator.DataSource.poppins
+import com.acornova.thenavigator.Title
+import compose.icons.FontAwesomeIcons
+import compose.icons.fontawesomeicons.Solid
+import compose.icons.fontawesomeicons.solid.ArrowRight
+import org.jetbrains.compose.resources.imageResource
+import thenavigator.composeapp.generated.resources.Res
+import thenavigator.composeapp.generated.resources.bg
+
+@Composable
+fun HomeScreen() {
+    Image(
+        bitmap = imageResource(Res.drawable.bg),
+        contentDescription = null,
+        modifier = Modifier.fillMaxSize().blur(10.dp),
+        contentScale = ContentScale.Crop
+    )
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(25.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+        Title(
+            text = "The Deliverer",
+            color = Colors.onPrimaryVariant
+        )
+        Spacer(Modifier.height(20.dp))
+        Text(
+            text = "The next stage of technological revolution of deliverability hassle-free.",
+            color = Colors.onPrimary,
+            fontSize = typography.headlineSmall.fontSize,
+            style = typography.headlineSmall,
+            fontWeight = FontWeight.Medium,
+            textAlign = TextAlign.Center,
+            fontFamily = poppins
+        )
+        Spacer(Modifier.height(20.dp))
+        Button(
+            onClick = {
+                navController.navigate("objective")
+            },
+            colors = ButtonDefaults.buttonColors(
+                containerColor = Colors.primary,
+                contentColor = Colors.onPrimary
+            ),
+            modifier = Modifier
+                .width(250.dp)
+                .clip(RoundedCornerShape(100.dp))
+        ) {
+            Spacer(Modifier.height(40.dp))
+            Text(
+                text = "Get Started",
+                color = Colors.onPrimary,
+                fontSize = typography.headlineSmall.fontSize,
+                style = typography.headlineSmall,
+                fontWeight = FontWeight.SemiBold,
+                fontFamily = poppins
+            )
+            Spacer(Modifier.width(10.dp))
+            Image(
+                imageVector = FontAwesomeIcons.Solid.ArrowRight,
+                contentDescription = null,
+                modifier = Modifier
+                    .size(30.dp),
+                colorFilter = ColorFilter.tint(Colors.onPrimary)
+            )
+        }
+    }
+}

@@ -46,6 +46,7 @@ kotlin {
             implementation(libs.androidx.lifecycle.runtimeCompose)
 
             implementation(libs.navigation.compose)
+            implementation(libs.font.awesome)
         }
         commonTest.dependencies {
             implementation(libs.kotlin.test)

@@ -1,7 +1,22 @@
 package com.acornova.thenavigator
 
-class JsPlatform: Platform {
-    override val name: String = "Web with Kotlin/JS"
+import androidx.compose.runtime.Composable
+import kotlinx.browser.window
+
+actual fun getPlatform(): String = "Web with Kotlin/JS"
+
+@Composable
+actual fun getSize(): String {
+    val userAgent = window.navigator.userAgent
+    return  if (userAgent.contains("Mobile") || userAgent.contains("Android") || userAgent.contains("iPhone")) {
+        "Small"
+    } else {
+        "Large"
+    }
 }
 
-actual fun getPlatform(): Platform = JsPlatform()
+@Composable
+actual fun phoneAnroid(): Boolean {
+    val userAgent = window.navigator.userAgent
+    return userAgent.contains("Android")
+}
