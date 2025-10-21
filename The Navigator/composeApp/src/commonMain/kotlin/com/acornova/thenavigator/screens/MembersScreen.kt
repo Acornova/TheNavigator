@@ -28,7 +28,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.acornova.thenavigator.Colors
 import com.acornova.thenavigator.DataSource.navController
-import com.acornova.thenavigator.DataSource.poppins
+import com.acornova.thenavigator.DataSource.dmsans
 import com.acornova.thenavigator.DecorLine
 import com.acornova.thenavigator.HomeButton
 import com.acornova.thenavigator.NextButton
@@ -75,7 +75,7 @@ fun MembersScreen() {
                 fontSize = 30.sp,
                 style = typography.headlineLarge,
                 fontWeight = FontWeight.SemiBold,
-                fontFamily = poppins,
+                fontFamily = dmsans,
                 textAlign = TextAlign.Center
             )
             Spacer(Modifier.height(10.dp))
@@ -85,7 +85,7 @@ fun MembersScreen() {
                 fontSize = 18.sp,
                 style = typography.headlineLarge,
                 fontWeight = FontWeight.Medium,
-                fontFamily = poppins,
+                fontFamily = dmsans,
                 textAlign = TextAlign.Center
             )
         }
@@ -97,6 +97,7 @@ fun MembersScreen() {
             .fillMaxSize()
             .background(Colors.primary)
             .padding(25.dp)
+            .padding(top = 150.dp)
             .verticalScroll(rememberScrollState()),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {

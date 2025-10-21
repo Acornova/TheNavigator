@@ -26,7 +26,7 @@ import androidx.compose.ui.unit.sp
 import com.acornova.thenavigator.Colors
 import com.acornova.thenavigator.DataSource
 import com.acornova.thenavigator.DataSource.navController
-import com.acornova.thenavigator.DataSource.poppins
+import com.acornova.thenavigator.DataSource.dmsans
 import com.acornova.thenavigator.DecorLine
 import com.acornova.thenavigator.HomeButton
 import com.acornova.thenavigator.NextButton
@@ -39,6 +39,9 @@ import thenavigator.composeapp.generated.resources.bg
 
 @Composable
 fun MapScreen() {
+//    TEMP REDIRECTOR
+    navController.navigate("prospects")
+
     @Composable
     fun ShowImage(
         image: DrawableResource
@@ -48,7 +51,8 @@ fun MapScreen() {
                 .fillMaxWidth(0.8f)
                 .clip(RoundedCornerShape(25.dp))
                 .background(Colors.background)
-                .padding(25.dp),
+                .padding(25.dp)
+                .padding(top = 150.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.SpaceBetween
         ) {
@@ -60,7 +64,7 @@ fun MapScreen() {
                     DataSource.setReturnRoute("map")
                     navController.navigate("imageViewer")
                 },
-                fontFamily = poppins,
+                fontFamily = dmsans,
                 fontSize = 30.sp
             )
             Spacer(Modifier.height(10.dp))

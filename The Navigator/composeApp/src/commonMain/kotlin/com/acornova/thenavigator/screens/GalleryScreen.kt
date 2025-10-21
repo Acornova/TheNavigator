@@ -32,7 +32,7 @@ import androidx.compose.ui.unit.dp
 import com.acornova.thenavigator.Colors
 import com.acornova.thenavigator.DataSource
 import com.acornova.thenavigator.DataSource.navController
-import com.acornova.thenavigator.DataSource.poppins
+import com.acornova.thenavigator.DataSource.dmsans
 import com.acornova.thenavigator.DecorLine
 import com.acornova.thenavigator.HomeButton
 import com.acornova.thenavigator.NextButton
@@ -107,7 +107,7 @@ fun GalleryScreen() {
                     fontSize = typography.headlineSmall.fontSize,
                     style = typography.headlineSmall,
                     fontWeight = FontWeight.SemiBold,
-                    fontFamily = poppins
+                    fontFamily = dmsans
                 )
             }
         }
@@ -119,6 +119,7 @@ fun GalleryScreen() {
             .fillMaxSize()
             .background(Colors.primary)
             .padding(25.dp)
+            .padding(top = 150.dp)
             .verticalScroll(rememberScrollState()),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {

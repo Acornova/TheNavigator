@@ -35,7 +35,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.acornova.thenavigator.Colors
 import com.acornova.thenavigator.DataSource.navController
-import com.acornova.thenavigator.DataSource.poppins
+import com.acornova.thenavigator.DataSource.dmsans
 import com.acornova.thenavigator.downloadApp
 import com.acornova.thenavigator.getPlatform
 import com.acornova.thenavigator.getSize
@@ -98,12 +98,12 @@ fun NavigationBar(
             )
             Spacer(Modifier.width(10.dp))
             Text(
-                text = "The Deliverer",
+                text = "The Navigator",
                 color = Colors.onContainer,
-                fontSize = typography.headlineMedium.fontSize,
-                style = typography.headlineMedium,
+                fontSize = typography.headlineSmall.fontSize,
+                style = typography.headlineSmall,
                 fontWeight = FontWeight.Medium,
-                fontFamily = poppins
+                fontFamily = dmsans
             )
         }
         Row(
@@ -146,13 +146,13 @@ fun NavigationBar(
                             .clickable {
                                 if (androidPhone) {
                                     val downloadSuccess =
-                                        downloadApp("https://play.google.com/store/apps/details?id=com.myjworld.thedrone")
+                                        downloadApp("https://play.google.com/store/apps/details?id=com.acornova.thenavigator")
                                     if (!downloadSuccess) {
                                         supported = false
                                     }
                                 } else {
                                     val downloadSuccess =
-                                        downloadApp("https://myj-world.github.io/the-deliverer/download.html")
+                                        downloadApp("https://acornova.github.io/TheNavigator/TheNavigator.exe")
                                     if (!downloadSuccess) {
                                         supported = false
                                     }
@@ -186,7 +186,7 @@ fun NavigationBar(
                             color = Colors.onPrimary,
                             fontSize = 18.sp,
                             fontWeight = FontWeight.Normal,
-                            fontFamily = poppins
+                            fontFamily = dmsans
                         )
                     }
                 }
@@ -211,7 +211,7 @@ fun NavigationBarItem(
         fontSize = typography.headlineMedium.fontSize,
         style = typography.headlineMedium,
         fontWeight = FontWeight.Normal,
-        fontFamily = poppins,
+        fontFamily = dmsans,
         modifier = Modifier.clickable {
             onClick()
         }

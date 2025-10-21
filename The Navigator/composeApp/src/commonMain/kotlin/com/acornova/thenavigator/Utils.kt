@@ -3,6 +3,7 @@ package com.acornova.thenavigator
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.size
@@ -21,7 +22,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.acornova.thenavigator.DataSource.navController
-import com.acornova.thenavigator.DataSource.poppins
+import com.acornova.thenavigator.DataSource.dmsans
 import compose.icons.FontAwesomeIcons
 import compose.icons.fontawesomeicons.Solid
 import compose.icons.fontawesomeicons.solid.ArrowLeft
@@ -35,10 +36,10 @@ fun Title(text: String, color: Color) {
     Text(
         text = text,
         color = color,
-        fontSize = typography.headlineMedium.fontSize,
-        style = typography.headlineMedium,
+        fontSize = typography.displayLarge.fontSize,
+        style = typography.displayLarge,
         fontWeight = FontWeight.SemiBold,
-        fontFamily = poppins,
+        fontFamily = dmsans,
         textAlign = TextAlign.Center
     )
 }
@@ -66,7 +67,9 @@ fun NextButton(onClick: () -> Unit) {
         ),
         modifier = Modifier
             .width(56.dp)
-            .clip(RoundedCornerShape(100.dp))
+            .height(56.dp)
+            .clip(RoundedCornerShape(100.dp)),
+        contentPadding = PaddingValues(0.dp)
     ) {
         Spacer(Modifier.height(40.dp))
         Image(
@@ -89,7 +92,9 @@ fun PreviousButton(onClick: () -> Unit) {
         ),
         modifier = Modifier
             .width(56.dp)
-            .clip(RoundedCornerShape(100.dp))
+            .height(56.dp)
+            .clip(RoundedCornerShape(100.dp)),
+        contentPadding = PaddingValues(0.dp)
     ) {
         Spacer(Modifier.height(40.dp))
         Image(
@@ -114,7 +119,9 @@ fun HomeButton() {
         ),
         modifier = Modifier
             .width(56.dp)
-            .clip(RoundedCornerShape(100.dp))
+            .height(56.dp)
+            .clip(RoundedCornerShape(100.dp)),
+        contentPadding = PaddingValues(0.dp)
     ) {
         Spacer(Modifier.height(40.dp))
         Image(

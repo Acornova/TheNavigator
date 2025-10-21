@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.acornova.thenavigator.Colors
 import com.acornova.thenavigator.DataSource.navController
-import com.acornova.thenavigator.DataSource.poppins
+import com.acornova.thenavigator.DataSource.dmsans
 import com.acornova.thenavigator.DecorLine
 import com.acornova.thenavigator.HomeButton
 import com.acornova.thenavigator.NextButton
@@ -40,7 +40,8 @@ fun ObjectiveScreen() {
             .fillMaxSize()
             .background(Colors.primary)
             .verticalScroll(rememberScrollState())
-            .padding(25.dp),
+            .padding(25.dp)
+            .padding(top = 150.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Title(
@@ -64,7 +65,7 @@ fun ObjectiveScreen() {
                 style = typography.headlineMedium,
                 fontWeight = FontWeight.SemiBold,
                 textAlign = TextAlign.Center,
-                fontFamily = poppins
+                fontFamily = dmsans
             )
         }
         Spacer(Modifier.height(20.dp))

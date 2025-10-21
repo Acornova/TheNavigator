@@ -29,7 +29,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.acornova.thenavigator.Colors
 import com.acornova.thenavigator.DataSource.navController
-import com.acornova.thenavigator.DataSource.poppins
+import com.acornova.thenavigator.DataSource.dmsans
 import org.jetbrains.compose.resources.imageResource
 import thenavigator.composeapp.generated.resources.Res
 import thenavigator.composeapp.generated.resources.icon
@@ -61,12 +61,12 @@ fun NavigationDrawer(
             )
             Spacer(Modifier.width(15.dp))
             Text(
-                text = "The Deliverer",
+                text = "The Navigator",
                 color = Colors.onPrimary,
-                fontSize = typography.headlineLarge.fontSize,
-                style = typography.headlineLarge,
+                fontSize = typography.headlineMedium.fontSize,
+                style = typography.headlineMedium,
                 fontWeight = FontWeight.SemiBold,
-                fontFamily = poppins
+                fontFamily = dmsans
             )
         }
         Spacer(Modifier.height(60.dp))
@@ -124,7 +124,7 @@ fun NavigationDrawerItem(
             fontSize = typography.headlineSmall.fontSize,
             style = typography.headlineSmall,
             fontWeight = FontWeight.Normal,
-            fontFamily = poppins
+            fontFamily = dmsans
         )
     }
 }

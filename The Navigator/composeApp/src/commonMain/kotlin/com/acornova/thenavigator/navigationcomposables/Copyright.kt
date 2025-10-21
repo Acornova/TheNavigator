@@ -16,7 +16,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.acornova.thenavigator.Colors
-import com.acornova.thenavigator.DataSource.poppins
+import com.acornova.thenavigator.DataSource.dmsans
 
 // Copyright Message
 
@@ -38,10 +38,10 @@ fun BottomBar() {
             Text(
                 text = "© 2025 The Navigator. All rights reserved.",
                 color = Colors.onContainer,
-                fontSize = typography.headlineSmall.fontSize,
-                style = typography.headlineSmall,
+                fontSize = typography.titleLarge.fontSize,
+                style = typography.titleLarge,
                 fontWeight = FontWeight.SemiBold,
-                fontFamily = poppins,
+                fontFamily = dmsans,
                 textAlign = TextAlign.Center
             )
         }

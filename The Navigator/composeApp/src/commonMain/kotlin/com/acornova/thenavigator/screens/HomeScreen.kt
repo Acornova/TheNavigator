@@ -26,7 +26,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.acornova.thenavigator.Colors
 import com.acornova.thenavigator.DataSource.navController
-import com.acornova.thenavigator.DataSource.poppins
+import com.acornova.thenavigator.DataSource.dmsans
 import com.acornova.thenavigator.Title
 import compose.icons.FontAwesomeIcons
 import compose.icons.fontawesomeicons.Solid
@@ -51,7 +51,7 @@ fun HomeScreen() {
         verticalArrangement = Arrangement.Center
     ) {
         Title(
-            text = "The Deliverer",
+            text = "The Navigator",
             color = Colors.onPrimaryVariant
         )
         Spacer(Modifier.height(20.dp))
@@ -62,7 +62,7 @@ fun HomeScreen() {
             style = typography.headlineSmall,
             fontWeight = FontWeight.Medium,
             textAlign = TextAlign.Center,
-            fontFamily = poppins
+            fontFamily = dmsans
         )
         Spacer(Modifier.height(20.dp))
         Button(
@@ -84,7 +84,7 @@ fun HomeScreen() {
                 fontSize = typography.headlineSmall.fontSize,
                 style = typography.headlineSmall,
                 fontWeight = FontWeight.SemiBold,
-                fontFamily = poppins
+                fontFamily = dmsans
             )
             Spacer(Modifier.width(10.dp))
             Image(

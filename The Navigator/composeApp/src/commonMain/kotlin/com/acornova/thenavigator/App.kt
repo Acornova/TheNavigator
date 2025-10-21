@@ -1,7 +1,5 @@
 package com.acornova.thenavigator
 
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.DrawerValue
@@ -10,18 +8,15 @@ import androidx.compose.material3.ModalNavigationDrawer
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.rememberDrawerState
 import androidx.compose.runtime.*
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
-import com.acornova.thenavigator.DataSource.dmSans
 import com.acornova.thenavigator.DataSource.navController
-import com.acornova.thenavigator.DataSource.poppins
+import com.acornova.thenavigator.DataSource.dmsans
 import com.acornova.thenavigator.navigationcomposables.BottomBar
 import com.acornova.thenavigator.navigationcomposables.NavigationBar
 import com.acornova.thenavigator.navigationcomposables.NavigationDrawer
@@ -37,13 +32,7 @@ import thenavigator.composeapp.generated.resources.poppins
 @Composable
 @Preview
 fun App() {
-    poppins = FontFamily(
-        listOf(
-            Font(Res.font.poppins)
-        )
-    )
-
-    dmSans = FontFamily(
+    dmsans = FontFamily(
         listOf(
             Font(Res.font.dmsans)
         )
@@ -76,7 +65,15 @@ fun App() {
                 },
                 bottomBar = { BottomBar() }
             ) { padding ->
-                Navigation(navController)
+                var modifier = Modifier.fillMaxSize()
+                if (getSize() == "Small" && getPlatform() == "Android") {
+                    modifier = modifier.padding(top = 70.dp)
+                }
+
+                Navigation(
+                    navController = navController,
+                    modifier = modifier
+                )
             }
         }
 
@@ -90,8 +87,8 @@ fun App() {
 }
 
 @Composable
-fun Navigation(navController: NavHostController) {
-    NavHost(navController = navController, startDestination = "home", modifier = Modifier.padding(top = 70.dp).fillMaxSize()) {
+fun Navigation(navController: NavHostController, modifier: Modifier) {
+    NavHost(navController = navController, startDestination = "home", modifier = modifier) {
         screens.forEach { screen ->
             composable(screen.route) {
                 screen.screen()

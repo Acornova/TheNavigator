@@ -28,7 +28,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.acornova.thenavigator.Colors
 import com.acornova.thenavigator.DataSource.navController
-import com.acornova.thenavigator.DataSource.poppins
+import com.acornova.thenavigator.DataSource.dmsans
 import com.acornova.thenavigator.DecorLine
 import com.acornova.thenavigator.HomeButton
 import com.acornova.thenavigator.NextButton
@@ -45,6 +45,7 @@ fun ProspectsScreen() {
         modifier = Modifier
             .fillMaxSize()
             .background(Colors.primary)
+            .padding(top = 150.dp)
             .padding(25.dp)
             .verticalScroll(rememberScrollState()),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -80,7 +81,7 @@ fun ProspectsScreen() {
                         fontSize = 30.sp,
                         style = typography.headlineMedium,
                         fontWeight = FontWeight.SemiBold,
-                        fontFamily = poppins
+                        fontFamily = dmsans
                     )
                 }
                 Spacer(Modifier.width(10.dp))
@@ -98,7 +99,7 @@ fun ProspectsScreen() {
                         fontSize = 18.sp,
                         style = typography.headlineMedium,
                         fontWeight = FontWeight.Normal,
-                        fontFamily = poppins
+                        fontFamily = dmsans
                     )
                 }
             }

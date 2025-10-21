@@ -7,8 +7,7 @@ import thenavigator.composeapp.generated.resources.Res
 import thenavigator.composeapp.generated.resources.myj
 
 object DataSource {
-    lateinit var poppins : FontFamily
-    lateinit var dmSans : FontFamily
+    lateinit var dmsans : FontFamily
 
     lateinit var navController : NavHostController
 

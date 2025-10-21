@@ -22,14 +22,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.acornova.thenavigator.Colors
 import com.acornova.thenavigator.DataSource.navController
-import com.acornova.thenavigator.DataSource.poppins
+import com.acornova.thenavigator.DataSource.dmsans
 import com.acornova.thenavigator.DecorLine
 import com.acornova.thenavigator.HomeButton
 import com.acornova.thenavigator.NextButton
@@ -47,6 +46,7 @@ fun FeaturesScreen() {
             .fillMaxSize()
             .background(Colors.primary)
             .padding(25.dp)
+            .padding(top = 150.dp)
             .verticalScroll(rememberScrollState()),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -81,7 +81,7 @@ fun FeaturesScreen() {
                         fontSize = 30.sp,
                         style = typography.headlineLarge,
                         fontWeight = FontWeight.SemiBold,
-                        fontFamily = poppins
+                        fontFamily = dmsans
                     )
                 }
                 Spacer(Modifier.width(10.dp))
@@ -99,7 +99,7 @@ fun FeaturesScreen() {
                         fontSize = 18.sp,
                         style = typography.headlineLarge,
                         fontWeight = FontWeight.Normal,
-                        fontFamily = poppins
+                        fontFamily = dmsans
                     )
                 }
             }
