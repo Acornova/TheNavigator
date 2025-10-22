@@ -36,12 +36,10 @@ import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.imageResource
 import thenavigator.composeapp.generated.resources.Res
 import thenavigator.composeapp.generated.resources.bg
+import thenavigator.composeapp.generated.resources.map
 
 @Composable
 fun MapScreen() {
-//    TEMP REDIRECTOR
-    navController.navigate("prospects")
-
     @Composable
     fun ShowImage(
         image: DrawableResource
@@ -51,8 +49,7 @@ fun MapScreen() {
                 .fillMaxWidth(0.8f)
                 .clip(RoundedCornerShape(25.dp))
                 .background(Colors.background)
-                .padding(25.dp)
-                .padding(top = 150.dp),
+                .padding(25.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.SpaceBetween
         ) {
@@ -60,7 +57,7 @@ fun MapScreen() {
                 text = "Click to view the map",
                 color = Colors.onPrimaryVariant,
                 modifier = Modifier.padding(25.dp).clickable {
-                    DataSource.setImage(Res.drawable.bg)
+                    DataSource.setImage(Res.drawable.map)
                     DataSource.setReturnRoute("map")
                     navController.navigate("imageViewer")
                 },
@@ -75,7 +72,7 @@ fun MapScreen() {
                     .fillMaxSize()
                     .clip(RoundedCornerShape(25.dp))
                     .clickable {
-                        DataSource.setImage(Res.drawable.bg)
+                        DataSource.setImage(Res.drawable.map)
                         DataSource.setReturnRoute("map")
                         navController.navigate("imageViewer")
                     },
@@ -91,6 +88,7 @@ fun MapScreen() {
             .fillMaxSize()
             .background(Colors.primary)
             .padding(25.dp)
+            .padding(top = 150.dp)
             .verticalScroll(rememberScrollState()),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
@@ -100,7 +98,7 @@ fun MapScreen() {
         )
         DecorLine()
         ShowImage(
-            image = Res.drawable.bg
+            image = Res.drawable.map
         )
         Spacer(Modifier.height(20.dp))
         Row(

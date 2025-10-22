@@ -45,7 +45,11 @@ import compose.icons.fontawesomeicons.solid.Microscope
 import org.jetbrains.compose.resources.DrawableResource
 import org.jetbrains.compose.resources.imageResource
 import thenavigator.composeapp.generated.resources.Res
+import thenavigator.composeapp.generated.resources.back
 import thenavigator.composeapp.generated.resources.bg
+import thenavigator.composeapp.generated.resources.front
+import thenavigator.composeapp.generated.resources.side
+import thenavigator.composeapp.generated.resources.top
 
 @Composable
 fun GalleryScreen() {
@@ -130,10 +134,16 @@ fun GalleryScreen() {
         DecorLine()
         if (getSize() == "Small") {
             ShowImage(
-                image = Res.drawable.bg
+                image = Res.drawable.top
             )
             ShowImage(
-                image = Res.drawable.bg
+                image = Res.drawable.side
+            )
+            ShowImage(
+                image = Res.drawable.front
+            )
+            ShowImage(
+                image = Res.drawable.back
             )
         } else {
             Row(
@@ -142,11 +152,19 @@ fun GalleryScreen() {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 ShowImage(
-                    image = Res.drawable.bg
+                    image = Res.drawable.top
                 )
                 Spacer(Modifier.width(10.dp))
                 ShowImage(
-                    image = Res.drawable.bg
+                    image = Res.drawable.side
+                )
+                Spacer(Modifier.width(10.dp))
+                ShowImage(
+                    image = Res.drawable.front
+                )
+                Spacer(Modifier.width(10.dp))
+                ShowImage(
+                    image = Res.drawable.back
                 )
             }
         }

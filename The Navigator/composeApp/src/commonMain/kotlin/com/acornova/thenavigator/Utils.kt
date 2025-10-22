@@ -60,7 +60,10 @@ fun DecorLine() {
 @Composable
 fun NextButton(onClick: () -> Unit) {
     Button(
-        onClick = onClick,
+        onClick = {
+            DataSource.autoBreak = true
+            onClick()
+        },
         colors = ButtonDefaults.buttonColors(
             containerColor = Colors.container,
             contentColor = Colors.onContainer
@@ -85,7 +88,10 @@ fun NextButton(onClick: () -> Unit) {
 @Composable
 fun PreviousButton(onClick: () -> Unit) {
     Button(
-        onClick = onClick,
+        onClick = {
+            DataSource.autoBreak = true
+            onClick()
+        },
         colors = ButtonDefaults.buttonColors(
             containerColor = Colors.container,
             contentColor = Colors.onContainer
@@ -111,6 +117,7 @@ fun PreviousButton(onClick: () -> Unit) {
 fun HomeButton() {
     Button(
         onClick = {
+            DataSource.autoBreak = true
             navController.navigate("home")
         },
         colors = ButtonDefaults.buttonColors(

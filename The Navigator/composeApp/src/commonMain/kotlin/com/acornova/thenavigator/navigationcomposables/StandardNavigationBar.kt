@@ -34,6 +34,7 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.acornova.thenavigator.Colors
+import com.acornova.thenavigator.DataSource
 import com.acornova.thenavigator.DataSource.navController
 import com.acornova.thenavigator.DataSource.dmsans
 import com.acornova.thenavigator.downloadApp
@@ -127,6 +128,8 @@ fun NavigationBar(
                         label = screen.title,
                         selected = navController.currentDestination?.route == screen.route,
                         onClick = {
+                            DataSource.autoBreak = true
+                            print("Autoloop broken")
                             navController.navigate(screen.route)
                         }
                     )

@@ -28,6 +28,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.acornova.thenavigator.Colors
+import com.acornova.thenavigator.DataSource
 import com.acornova.thenavigator.DataSource.navController
 import com.acornova.thenavigator.DataSource.dmsans
 import org.jetbrains.compose.resources.imageResource
@@ -80,6 +81,8 @@ fun NavigationDrawer(
                     label = screen.title,
                     icon = screen.icon,
                     onClick = {
+                        DataSource.autoBreak = true
+                        print("Autoloop broken")
                         navController.navigate(screen.route)
                         closeDrawer()
                     }

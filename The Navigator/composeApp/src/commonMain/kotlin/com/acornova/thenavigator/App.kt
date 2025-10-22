@@ -15,6 +15,7 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.rememberNavController
+import com.acornova.thenavigator.DataSource.coroutineScope
 import com.acornova.thenavigator.DataSource.navController
 import com.acornova.thenavigator.DataSource.dmsans
 import com.acornova.thenavigator.navigationcomposables.BottomBar
@@ -39,6 +40,8 @@ fun App() {
     )
 
     navController = rememberNavController()
+
+    coroutineScope = rememberCoroutineScope()
 
     val drawerState = rememberDrawerState(initialValue = DrawerValue.Closed)
     val coroutineScope = rememberCoroutineScope()
