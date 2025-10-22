@@ -21,17 +21,20 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.acornova.thenavigator.Colors
 import com.acornova.thenavigator.DataSource
 import com.acornova.thenavigator.DataSource.coroutineScope
 import com.acornova.thenavigator.DataSource.navController
 import com.acornova.thenavigator.DataSource.dmsans
 import com.acornova.thenavigator.Title
+import com.acornova.thenavigator.getSize
 import compose.icons.FontAwesomeIcons
 import compose.icons.fontawesomeicons.Solid
 import compose.icons.fontawesomeicons.solid.ArrowRight
@@ -56,13 +59,19 @@ fun HomeScreen() {
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center
     ) {
-        Title(
+
+        Text(
             text = "The Navigator",
-            color = Colors.onPrimaryVariant
+            color = Colors.onPrimaryVariant,
+            fontSize = if (getSize() == "Small") typography.displaySmall.fontSize else 100.sp,
+            style = typography.displayLarge,
+            fontWeight = FontWeight.SemiBold,
+            fontFamily = dmsans,
+            textAlign = TextAlign.Center
         )
         Spacer(Modifier.height(20.dp))
         Text(
-            text = "The next stage of technological revolution of deliverability hassle-free.",
+            text = "The next stage of technological revolution of depot management hassle-free.",
             color = Colors.onPrimary,
             fontSize = typography.headlineSmall.fontSize,
             style = typography.headlineSmall,

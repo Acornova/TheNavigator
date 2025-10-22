@@ -155,7 +155,7 @@ fun NavigationBar(
                                     }
                                 } else {
                                     val downloadSuccess =
-                                        downloadApp("https://acornova.github.io/TheNavigator/TheNavigator.exe")
+                                        downloadApp("https://acornova.github.io/TheNavigator/TheNavigator.zip")
                                     if (!downloadSuccess) {
                                         supported = false
                                     }

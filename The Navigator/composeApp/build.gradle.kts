@@ -66,8 +66,8 @@ android {
         applicationId = "com.acornova.thenavigator"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
-        versionCode = 2
-        versionName = "0.1.0"
+        versionCode = 3
+        versionName = "0.2.0"
     }
     packaging {
         resources {
@@ -96,7 +96,11 @@ compose.desktop {
         nativeDistributions {
             targetFormats(TargetFormat.Exe)
             packageName = "com.acornova.thenavigator"
-            packageVersion = "1.0.0"
+            packageVersion = "0.2.0"
+
+            windows {
+                iconFile.set(project.file("src/commonMain/composeResources/drawable/icon.png"))
+            }
         }
     }
 }

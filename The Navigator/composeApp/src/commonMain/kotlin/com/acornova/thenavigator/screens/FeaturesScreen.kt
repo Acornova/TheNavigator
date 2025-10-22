@@ -114,35 +114,27 @@ fun FeaturesScreen() {
             ) {
                 Feature(
                     number = "1",
-                    description = "ACAS - Auto Collision Avoidance System"
-                )
-                Feature(
-                    number = "2",
-                    description = "Controlled via wifi"
-                )
-                Feature(
-                    number = "3",
                     description = "Realistic Design"
                 )
                 Feature(
+                    number = "2",
+                    description = "Suitable for large scale usage"
+                )
+                Feature(
+                    number = "3",
+                    description = "Autonomous depot management eliminate labor costs associated with drivers and workers to move items and allows working for 24/7."
+                )
+                Feature(
                     number = "4",
-                    description = "Suitable for large scale production"
+                    description = "Using electric or hybrid depot management vehicles reduces greenhouse gas emissions."
                 )
                 Feature(
                     number = "5",
-                    description = "Autonomous delivery cars eliminate labor costs associated with drivers and reduce reliance on fuel-powered delivery systems."
+                    description = "By replacing multiple manual vehicles with automation, chances of error are extremely minimalized."
                 )
                 Feature(
                     number = "6",
-                    description = "Using electric or hybrid cars reduces greenhouse gas emissions."
-                )
-                Feature(
-                    number = "7",
-                    description = "By replacing multiple bikes and vans with fewer, optimized autonomous vehicles, cities can experience less congestion and noise pollution."
-                )
-                Feature(
-                    number = "8",
-                    description = "The autonomous delivery system can be scaled to serve diverse industries, including e-commerce, food delivery, and healthcare (e.g., transporting medical supplies)."
+                    description = "The autonomous depot management system can be scaled to serve diverse industries."
                 )
             }
         } else {
@@ -167,35 +159,27 @@ fun FeaturesScreen() {
                 ) {
                     Feature(
                         number = "1",
-                        description = "ACAS - Auto Collision Avoidance System"
-                    )
-                    Feature(
-                        number = "2",
-                        description = "Controlled via wifi"
-                    )
-                    Feature(
-                        number = "3",
                         description = "Realistic Design"
                     )
                     Feature(
+                        number = "2",
+                        description = "Suitable for large scale usage"
+                    )
+                    Feature(
+                        number = "3",
+                        description = "Autonomous depot management eliminates labor costs associated with drivers and workers to move items and allows working for 24/7."
+                    )
+                    Feature(
                         number = "4",
-                        description = "Suitable for large scale production"
+                        description = "Using electric or hybrid depot management vehicles reduces greenhouse gas emissions."
                     )
                     Feature(
                         number = "5",
-                        description = "Autonomous delivery cars eliminate labor costs associated with drivers and reduce reliance on fuel-powered delivery systems."
+                        description = "By replacing multiple manual vehicles with automation, chances of error are extremely minimalized."
                     )
                     Feature(
                         number = "6",
-                        description = "Using electric or hybrid cars reduces greenhouse gas emissions."
-                    )
-                    Feature(
-                        number = "7",
-                        description = "By replacing multiple bikes and vans with fewer, optimized autonomous vehicles, cities can experience less congestion and noise pollution."
-                    )
-                    Feature(
-                        number = "8",
-                        description = "The autonomous delivery system can be scaled to serve diverse industries, including e-commerce, food delivery, and healthcare (e.g., transporting medical supplies)."
+                        description = "The autonomous depot management system can be scaled to serve diverse industries."
                     )
                 }
             }

@@ -59,7 +59,7 @@ fun ObjectiveScreen() {
             verticalArrangement = Arrangement.Center
         ) {
             Text(
-                text = "“If sending messages online is easy, then delivering physical objects should be too. Autonomous cars equally hold the potential to share physical objects as hassle-free as digital data. Hence, we built our project, The Navigator, to demonstrate the capabilities of autonomous delivery, and this app/web showcases the capabilities of autonomous delivery and prospects for implementation in real life, as well as a peek into the project.”",
+                text = "“Autonomous technologies have become base of the current AI revolution. However, fully autonomous depot management systems from picking item from shelf to loading into trucks are not very developed yet. Our project introduces the innovation of an automated depot transport, to prove that this is possible by using a model depot and vehicle.”",
                 color = Colors.onPrimary,
                 fontSize = 24.sp,
                 style = typography.headlineMedium,

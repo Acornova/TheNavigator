@@ -114,24 +114,29 @@ fun ProspectsScreen() {
             ) {
                 Prospect(
                     number = "1",
-                    description = "Making code that dynamically generates the map from location \'A\' to location \'B\'."
+                    description = "Build a functional prototype to validate core capabilities (autonomous navigation, load handling, safety interlocks) and define KPIs (uptime, throughput, error rate)."
                 )
                 Prospect(
                     number = "2",
-                    description = "Making large scale project & testing in harsh conditions."
+                    description = "Plan and execute large-scale pilots across multiple sites and conditions: create test matrices (temperature, layout, loads), run stress and failover scenarios, and validate integrations with existing WMS and IT systems."
                 )
                 Prospect(
                     number = "3",
-                    description = "Use AI Algorithms to maneuver through unpredictable traffic and narrow streets."
+                    description = "Use AI-driven algorithms to handle unpredictable situations: collect diverse operation data, train in simulation/digital-twin environments, use ensembles with uncertainty estimates, and implement human-in-the-loop escalation and safe fallbacks."
                 )
                 Prospect(
                     number = "4",
-                    description = "Employ advanced encryption techniques and blockchain technology for secure communication and use delivery logs."
+                    description = "Integrate end-to-end with operations: fleet/charging infrastructure, network capacity, inventory/WMS sync, security and access control, and operator UIs for monitoring and overrides."
                 )
                 Prospect(
                     number = "5",
-                    description = "Collaborate with local governments to create policies that support innovation while ensuring public safety."
+                    description = "Scale in phases: increase unit count and route complexity gradually, deploy centralized monitoring/telemetry, set up maintenance and spare-parts logistics, and train on-site technicians and operators."
                 )
+                Prospect(
+                    number = "6",
+                    description = "Achieve full production readiness: obtain regulatory/safety certifications, set up support & SLA processes, implement continuous improvement (A/B tests, model retraining, incident postmortems) and prepare commercial rollout plans."
+                )
+
             }
         } else {
             Row(
@@ -155,23 +160,27 @@ fun ProspectsScreen() {
                 ) {
                     Prospect(
                         number = "1",
-                        description = "Making code that dynamically generates the map from location \'A\' to location \'B\'."
+                        description = "Build a functional prototype to validate core capabilities (autonomous navigation, load handling, safety interlocks) and define KPIs (uptime, throughput, error rate)."
                     )
                     Prospect(
                         number = "2",
-                        description = "Making large scale project & testing in harsh conditions."
+                        description = "Plan and execute large-scale pilots across multiple sites and conditions: create test matrices (temperature, layout, loads), run stress and failover scenarios, and validate integrations with existing WMS and IT systems."
                     )
                     Prospect(
                         number = "3",
-                        description = "Use AI Algorithms to maneuver through unpredictable traffic and narrow streets."
+                        description = "Use AI-driven algorithms to handle unpredictable situations: collect diverse operation data, train in simulation/digital-twin environments, use ensembles with uncertainty estimates, and implement human-in-the-loop escalation and safe fallbacks."
                     )
                     Prospect(
                         number = "4",
-                        description = "Employ advanced encryption techniques and blockchain technology for secure communication and use delivery logs."
+                        description = "Integrate end-to-end with operations: fleet/charging infrastructure, network capacity, inventory/WMS sync, security and access control, and operator UIs for monitoring and overrides."
                     )
                     Prospect(
                         number = "5",
-                        description = "Collaborate with local governments to create policies that support innovation while ensuring public safety."
+                        description = "Scale in phases: increase unit count and route complexity gradually, deploy centralized monitoring/telemetry, set up maintenance and spare-parts logistics, and train on-site technicians and operators."
+                    )
+                    Prospect(
+                        number = "6",
+                        description = "Achieve full production readiness: obtain regulatory/safety certifications, set up support & SLA processes, implement continuous improvement (A/B tests, model retraining, incident postmortems) and prepare commercial rollout plans."
                     )
                 }
             }

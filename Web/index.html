@@ -3,36 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Acornova - Coming Soon</title>
-    <!-- Tailwind CSS --><script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: DM Sans --><link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
-    <style>
-        /* Custom styles to apply the DM Sans font */
-        body {
-            font-family: 'DM Sans', sans-serif;
-        }
-    </style>
+    <title>The Navigator</title>
+    <link rel="icon" type="image/png" href="composeResources/thenavigator.composeapp.generated.resources/drawable/icon.png">
+    <link type="text/css" rel="stylesheet" href="styles.css">
+    <script type="application/javascript" src="composeApp.js"></script>
 </head>
-<body class="bg-gradient-to-br from-[#2a2158] via-[#3a2f7c] to-[#5f49a3] text-white min-h-screen flex items-center justify-center p-6">
+<body>
+<img
+        id="loading-logo"
+        src="composeResources/thenavigator.composeapp.generated.resources/drawable/icon.png"
+        alt="Loading Logo"
+        style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 100px; height: 100px;"
+/>
+<div id="loading-spinner"></div>
+<script>
+    const logo = document.getElementById('loading-logo');
+    const spinner = document.getElementById('loading-spinner');
 
-    <div class="text-center w-full max-w-2xl mx-auto">
-        
-        <!-- Acornova Logo Image --><div class="mb-8">
-            <img src="ic.png" alt="The Navigator Logo" class="mx-auto h-24 max-w-[200px] object-contain">
-        </div>
+    logo.style.display = 'none';
 
-        <!-- Main Heading --><h1 class="text-5xl md:text-7xl font-bold mb-4 tracking-tight">
-            The Navigator is Coming Soon
-        </h1>
-
-        <!-- Subheading --><p class="text-lg md:text-xl text-purple-200 mb-8 max-w-xl mx-auto">
-            We're working hard behind the scenes to bring you something amazing. Our new website is under construction and will be ready shortly!
-        </p>
-
-    </div>
-
+    logo.addEventListener('load', () => {
+      spinner.style.display = 'none';
+      logo.style.display = 'block';
+    });
+</script>
 </body>
 </html>
-

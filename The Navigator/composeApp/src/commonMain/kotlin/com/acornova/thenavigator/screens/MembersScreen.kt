@@ -119,7 +119,7 @@ fun MembersScreen() {
             )
             Member(
                 name = "M. Yousuf Jamil",
-                role = "Android App, Desktop App & Website Developer",
+                role = "Android App, Desktop App & Website Developer. Supported physical project development.",
                 image = Res.drawable.myj
             )
         } else {
@@ -141,7 +141,7 @@ fun MembersScreen() {
                 Spacer(modifier = Modifier.width(10.dp))
                 Member(
                     name = "M. Yousuf Jamil",
-                    role = "Android App, Desktop App & Website Developer",
+                    role = "Android App, Desktop App & Website Developer. Supported physical project development.",
                     image = Res.drawable.myj
                 )
             }
