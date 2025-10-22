@@ -37,9 +37,6 @@ jobs:
       - name: Pull LFS files manually
         run: git lfs pull
 
-      - name: Ensure LFS zip is in Web folder
-        run: cp ./Web/TheNavigator.zip ./Web/TheNavigator.zip
-
       - name: Setup Pages
         uses: actions/configure-pages@v5
 
