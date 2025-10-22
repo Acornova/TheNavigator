@@ -33,13 +33,23 @@ jobs:
         uses: actions/checkout@v4
         with:
           lfs: true   # fetch LFS files
+
+      - name: Pull LFS files manually
+        run: git lfs pull
+
+      - name: Ensure LFS zip is in Web folder
+        run: cp ./Web/TheNavigator.zip ./Web/TheNavigator.zip
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
           path: './Web'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+
