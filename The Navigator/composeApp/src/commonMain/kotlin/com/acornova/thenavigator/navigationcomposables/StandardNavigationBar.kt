@@ -149,7 +149,7 @@ fun NavigationBar(
                             .clickable {
                                 if (androidPhone) {
                                     val downloadSuccess =
-                                        downloadApp("https://play.google.com/store/apps/details?id=com.acornova.thenavigator")
+                                        downloadApp("https://acornova.github.io/TheNavigator/TheNavigator.apk")
                                     if (!downloadSuccess) {
                                         supported = false
                                     }
